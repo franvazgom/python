@@ -12,9 +12,13 @@
 7. [¿Qué sucede internamente cuando se ejecuta un programa](#what_happening)
 8. [Comentarios](#comments)
 9. [Variables y Tipos de datos](#data_type)
-10. [input - keyboard](#input_keyboard) 
-11. [Ejercicios - Básicos](#basic_exercise)
-10. [String funciones](#string_functions)
+10. [input - keyboard](#input_keyboard)
+11. [Librería math](*math_lib)
+12. [funcion main (buena práctica)](*main_function) 
+13. [Entorno virtual](*virtual_env) 
+14. [Librería pytest](*pytest_lib)
+15. [Ejercicios - Básicos](#basic_exercise)
+16. [String funciones](#string_functions)
 
 ## Introducción <a name="introduction"></a> 
 Este es un módulo **básico de programación** donde puedes aprender a programar en el lenguaje python de manera estructurada. Si ya sabes programar en cualquier otro lenguaje, seguramente puedes avanzar mucho más rápido. Finalmente, si ya conoces el lenguaje python y solo estas reforzando tus habilidades de programación puedes intentar realizar los ejercicios propuestos en la carpeta `code/moduloI` 
@@ -186,13 +190,71 @@ edad = int(edad_str)        # Se convierte a número
 edad = int(input('Teclea un número: '))  # Lo mismo en una sola línea 
 ```
 
+## Librería math <a name="math_lib"></a>
+### Documentación de librería  
+[math lib](https://docs.python.org/3/library/math.html)
+### Verifique los siguientes ejemplos. 
+
+```python
+import math
+math.floor(3.9)
+math.ceil(9.1)
+math.comb(3 , 2)
+math.factorial(4)
+math.gcd(8 , 64)
+math.log(8 , 2)
+```
+
+
+## funcion main (buena práctica) <a name="main_function"></a>
+
+```python
+# Una buena práctica, el uso de la variable __name__ 
+def main():
+    print("Hola mundo")
+
+# La variable __name__ toma su valor dependiendo de como se ejecute el script,
+# cuando el valor de la variable es: __main__ python indica que el script 
+# principal es 'este script' 
+if __name__ == '__main__':
+    main()
+```
+## Entorno virtual <a name="virtual_env"></a>
+Las aplicaciones en Python usualmente hacen uso de paquetes y módulos que no forman parte de la librería estándar. Las aplicaciones a veces necesitan una versión específica de una librería, debido a que dicha aplicación requiere que un bug particular haya sido solucionado o bien la aplicación ha sido escrita usando una versión obsoleta de la interfaz de la librería.
+
+Esto significa que tal vez no sea posible para una instalación de Python cumplir los requerimientos de todas las aplicaciones. Si la aplicación A necesita la versión 1.0 de un módulo particular y la aplicación B necesita la versión 2.0, entonces los requerimientos entran en conflicto e instalar la versión 1.0 o 2.0 dejará una de las aplicaciones sin funcionar.
+
+La solución a este problema es crear un entorno virtual, un directorio que contiene una instalación de Python de una versión en particular, además de unos cuantos paquetes adicionales.
+
+Diferentes aplicaciones pueden entonces usar entornos virtuales diferentes. Para resolver el ejemplo de requerimientos en conflicto citado anteriormente, la aplicación A puede tener su propio entorno virtual con la versión 1.0 instalada mientras que la aplicación B tiene otro entorno virtual con la versión 2.0. Si la aplicación B requiere que actualizar la librería a la versión 3.0, ésto no afectará el entorno virtual de la aplicación A.
+
+```python
+# Sintaxis
+python -m venv nombre_entorno
+
+#Ejemplo:
+python -m venv venv
+```
+### Activación del entorno virtual 
+### Windows
+`venv\Scripts\activate`
+
+### MacOS / Linux
+`source venv/bin/activate`
+
+### Desactivar entorno virtual
+`deactivate`
+
+## Librería pytest <a name="pytest_lib"></a>
+Con el entorno virtual activado, instala la librería `pytest`
+```python
+# Puedes utilizar pip para instalar alguna librería. 
+pip install pytest 
+```
+*la explicación de pruebas se ve mas adelante*
+
 ## Ejercicios - Básicos <a name="basic_exercise"></a>
-Realiza los siguientes ejercicios: 
-* 00HelloWorld
-* 01OperacionesBasicas
-* 02AreaTriangulo
-* 03Promedio
-* 04CalculaTiempo
+Realiza al menos 5 de los ejercicios que se encuentran en la carpeta code (01_basicos)
 
 ## String - funciones <a name="string_functions"></a>
 * La función `print()` se utiliza para pintar el texto de la cadena
