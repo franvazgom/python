@@ -1,4 +1,4 @@
-<img src="../../images/LogoMagicPython.png" width="200">
+<img src="../../images/LogoMagicPython.png" width="100">
 
 # Python - Programación Orientada a Objetos
 

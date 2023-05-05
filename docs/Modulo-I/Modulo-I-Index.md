@@ -1,11 +1,11 @@
-<img src="../../images/LogoMagicPython.png" width="200">
+<img src="../../images/LogoMagicPython.png" width="100">
 
 # Python - Programación estructurada
 
 # Tabla de contenido
 1. [Introducción](#introduction)
 2. [Objetivos](#objectives)
-3. [Requerimientos de software](docs/Requirements.md)
+3. [Requerimientos de software](../References.md)
 4. [Un vistazo al IDE y la consola](#terminal)
 5. [Operadores aritméticos](#arithmetic_operators)
 6. [Hola mundo en python](#hello_world)
@@ -50,13 +50,13 @@ exit()
 ## Operadores aritméticos <a name="arithmetic_operators"></a> 
 ### Dentro de la consola de python, verifica e identifica los siguientes operadores básicos
 ```python
-2+3
-2-3
-3*4
-10//3
-10/3
-5%2
-2**5
+2 + 3
+2 - 3
+3 * 4
+10 // 3
+10 / 3
+5 % 2
+2 ** 5
 ```
 ### Precedencia de operadores básicos
 ```python
