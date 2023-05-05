@@ -297,8 +297,13 @@ print(x) # Observa que la variable x, NO fue modificada
 * islower()
 
 
-
-
-
-
- Sentencias de control, Ciclos, Tuplas, Listas, Matrices, Diccionarios, Funciones, Archivos, Excepciones, Estadística básica, Gráficas, Estándares de programación PEP-8, Entorno virtual. 
+### Temas restantes:
+* Sentencias de control
+* Estándares de programación PEP-8
+* Ciclos
+* Tuplas & Listas & Matrices
+* Diccionarios
+* Funciones
+* Archivos
+* Excepciones
+* Estadística básica & Gráficas
