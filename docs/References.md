@@ -1,5 +1,8 @@
 [Página principal](../README.md)
 
+# FAQ
+* [Preguntas frecuentes](FAQ.md)
+
 # Referencias 
 
 * [Libro - Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)

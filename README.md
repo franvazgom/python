@@ -17,6 +17,7 @@
 12. [Modulo 6 - Django, Vistas Basadas en Clases](docs/Modulo-VI/Modulo-VI-Index.md)
 13. [Modulo 7 - Temas selectos](docs/Modulo-VII/Modulo-VII-Index.md)
 14. [Referencias](docs/References.md)
+15. [Preguntas frecuentes](docs/FAQ.md)
 
 ## Objetivo general <a name="objective"></a>
 Adquirir las habilidades que se requieren para tener el perfil de **full stack developer** es decir, tener los conocimientos necesarios para la creación de aplicaciones web, desarrolladas en un tiempo óptimo y de manera sencilla. Proyectar al profesionista como un agente de cambio dentro de su organización, mediante el desarrollo tecnológico y soluciones creativas e innovadoras basadas en el desarrollo web.
