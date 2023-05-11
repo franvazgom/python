@@ -18,7 +18,8 @@
 13. [Entorno virtual](*virtual_env) 
 14. [Librería pytest](*pytest_lib)
 15. [Ejercicios - Básicos](#basic_exercise)
-16. [String funciones](#string_functions)
+16. [Strings](Modulo-I-Strings.md)
+17. [Sentencias de control](Modulo-I-If.md)
 
 ## Introducción <a name="introduction"></a> 
 Este es un módulo **básico de programación** donde puedes aprender a programar en el lenguaje python de manera estructurada. Si ya sabes programar en cualquier otro lenguaje, seguramente puedes avanzar mucho más rápido. Finalmente, si ya conoces el lenguaje python y solo estas reforzando tus habilidades de programación puedes intentar realizar los ejercicios propuestos en la carpeta `code/moduloI` 
@@ -256,49 +257,7 @@ pip install pytest
 ## Ejercicios - Básicos <a name="basic_exercise"></a>
 Realiza al menos 5 de los ejercicios que se encuentran en la carpeta code (01_basicos)
 
-## String - funciones <a name="string_functions"></a>
-* La función `print()` se utiliza para pintar el texto de la cadena
-### String = Lista de caracteres
-```python
-x = 'Python' 
-print(x[2]) # ==> t  - Observa que las posiciones en la lista empiezan en CERO 
-```
-
-### String = Slicing
-```python
-x = 'Python es lo mejor' 
-print(x[4:8]) # ==> on e  - Observa que el límite inferior se incluye, sin embargo, el límite superior no
-print(x[:3]) # ==> Pyt 
-```
-
-### String len 
-```python
-x = 'Python' 
-print(len(x)) # ==> 6 
-```
-
-### String strip 
-```python
-x = '  Python es lo mejor  ' 
-print(x.strip()) # ==> Python es lo mejor
-```
-
-### String replace 
-```python
-x = 'Python es lo mejor' 
-print(x.replace('o','x')) # ==> Pythxn es lo mejxr
-print(x) # Observa que la variable x, NO fue modificada 
-```
-
-### String Otras funciones
-* lower()
-* upper()
-* isupper()
-* islower()
-
-
 ### Temas restantes:
-* Sentencias de control
 * Estándares de programación PEP-8
 * Ciclos
 * Tuplas & Listas & Matrices
