@@ -22,6 +22,9 @@
     - Visual Studio code
     - Git
 # Python - Strings 
+## String - formato f
+Revisar el prefijo f o F <br>
+Ver `code\Modulo-I\ejercicios\03_Print.py`
 
 ## String - funciones
 * La función `print()` se utiliza para pintar el texto de la cadena
