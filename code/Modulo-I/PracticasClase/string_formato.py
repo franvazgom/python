@@ -32,5 +32,7 @@ def main():
 
     # print(F"Hola {'cadena':23} mundo")
 
+    print(f'{"hola":20}++')
+
 if __name__ == '__main__':
     main()
