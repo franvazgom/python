@@ -1,5 +1,26 @@
 <img src="../../images/LogoMagicPython.png" width="100">
 
+# Repaso, hasta ahora ¿qué hemos aprendido? 
+* Programación
+    - Consola
+    - Sintaxis de python
+    - Ejecución de un programa
+    - Operadores: + - / // * % **
+        - Precedencia
+    - print
+    - comentarios
+    - Variables
+        - Tipos de datos: int, str, float, bool
+        - Tipado dinámico 
+        - Casting
+    - Libería math: floor, ceil, comb, factorial, gcd, log
+    - Buena práctica: funcion main
+    - String: List, sublista, len, replace, lower, upper, isupper, islower
+
+* Herramientas (Instalación)
+    - Python
+    - Visual Studio code
+    - Git
 # Python - Strings 
 
 ## String - funciones
