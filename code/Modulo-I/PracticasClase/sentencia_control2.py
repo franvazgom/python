@@ -7,7 +7,7 @@ def main():
         print("Hola Alicia")
     else:
         edad = int(input("Teclea tu edad: "))
-        if edad < 12:
+        if edad < 12:       # If anidado 
             print("Tu no eres Alicia, pero si eres menor de 12")
         else:
             print("Tu no eres Alicia y tampoco eres menor de 12")

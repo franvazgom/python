@@ -8,6 +8,9 @@ def main():
         print("Saludos ALICIA!!!")
     else:
         print("Hola extraño")
+    if "a".upper() in nombre.upper():
+        print("Tu nombre contiene al menos una A")
+    
     print("Final del programa") 
     print("Adios")
 
