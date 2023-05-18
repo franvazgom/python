@@ -20,7 +20,9 @@
 15. [Ejercicios - Básicos](#basic_exercise)
 16. [Strings](Modulo-I-Strings.md)
 17. [Sentencias de control](Modulo-I-If.md)
-
+18. [Funciones](Modulo-I-Funciones.md)
+19. [Ciclos](Modulo-I-Ciclos.md)
+20. [Tortuga](Modulo-I-Turtle.md)
 ## Introducción <a name="introduction"></a> 
 Este es un módulo **básico de programación** donde puedes aprender a programar en el lenguaje python de manera estructurada. Si ya sabes programar en cualquier otro lenguaje, seguramente puedes avanzar mucho más rápido. Finalmente, si ya conoces el lenguaje python y solo estas reforzando tus habilidades de programación puedes intentar realizar los ejercicios propuestos en la carpeta `code/moduloI` 
 
