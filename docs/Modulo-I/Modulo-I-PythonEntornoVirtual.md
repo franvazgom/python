@@ -10,7 +10,7 @@
 
 
 ### Ejecución de una versión particular
-En el PATH puedes ubicar la ruta del archivo binario (ejecutable)
+En el PATH puedes ubicar la ruta del archivo binario (ejecutable)<br>
 <img src="../../images/PythonExecDiffVersion.png" width="800">
 
 
