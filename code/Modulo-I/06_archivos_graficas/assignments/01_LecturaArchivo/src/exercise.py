@@ -19,11 +19,24 @@ with open('datos.csv', 'r', encoding='utf-8') as f:
             linea = f.readline()
 '''
 
-
 import os
 def main():
     # Escribe tu código abajo de esta línea
-    pass
+    path = os.path.dirname(__file__)
+    print(path)
+    # with open(path + '/../../../files/datos.csv', 'r') as f:
+    #     lines = f.readlines()
+    # print(lines[1])
+
+    datos = []
+    with open(path + '/../../../files/datos.csv', 'r') as f:
+        linea = True
+        while linea:
+            linea = f.readline()
+            fila = linea.split(',')
+            datos.append(fila)
+    print(datos[7][4])
+    
 
 if __name__ == '__main__':
     main()
