@@ -1,4 +1,19 @@
 import os
+from matplotlib import pyplot as plt
+
+def muestra_tabla(datos, column_labels):
+    fig, ax = plt.subplots(figsize=(6,3))
+    ax.table(cellText=datos, colLabels=column_labels, loc="center")
+    ax.axis('tight')
+    ax.axis('off')
+    plt.show()
+
+def transforma_datos(estados, defunciones):
+    datos = []
+    for i in range(len(estados)):
+        renglon = [estados[i], defunciones[i]]
+        datos.append(renglon)
+    return datos
 
 def regresa_suma(matriz):
     res = []
@@ -25,9 +40,11 @@ def main():
                 fila = linea.split(',')
                 datos.append(fila)
     resultado, estados= regresa_suma(datos)
-    print(resultado, estados)
-
-
-
+    # print(resultado, estados)
+    r= transforma_datos(estados, resultado)
+    titulos = ['Estado', 'Deunfiones']
+    muestra_tabla(r, titulos)
+    
 if __name__ == '__main__':
     main()
+    
