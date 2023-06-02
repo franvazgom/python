@@ -1,6 +1,6 @@
 <img src="../../images/LogoMagicPython.png" width="100">
 
-# Recursivdad
+# Recursividad
 La recursividad, es una técnica de programación. (divide el problema en problemas mas pequeños) <br>
 La recursividad, nos permite que un bloque de instrucciones se ejecute un cierto número de veces (el que nosotros determinemos). <b>
 La recursividad la podemos ver como un concepto en programación que se refiere a la capacidad de una función para llamarse a sí misma durante su ejecución. En otras palabras, una función recursiva es aquella que se llama a sí misma para resolver un problema al dividirlo en subproblemas más pequeños. <br>
