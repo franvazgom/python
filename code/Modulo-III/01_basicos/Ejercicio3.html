@@ -1,0 +1,31 @@
+<!-- 
+1.- Asegure que el archivo "border.png" exista y se encuentre en la misma ruta
+2.- Revise la resolución de la imagen ¿De que tamaño es? es decir, cual es el ancho y alto de la imagen
+    ¿qué características tiene el archivo png? 
+3.- Crear un parrafo con id="borderimg1", en el archivo CSS coloque las siguientes propiedades para este id: 
+    border: 10px solid transparent;
+    padding: 20px;
+    border-image: url(border.png) 30 round;
+4.- Observe su funcionamiento, ahora cambie la propiedad border-image  por lo siguiente: 
+    border-image: url(border.png) 15 round;
+5.- Observe su funcionamiento, ahora cambie la propiedad border-image  por lo siguiente:
+    border-image: url(border.png) 15 stretch; 
+6.- Concluya, investigue su funcionamiento. 
+Comentario Respuesta: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        @import url("./ArchivosCSS/Ejercicio3.css");
+    </style>
+</head>
+<body>
+    <p id='borderimg1'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quae distinctio esse, voluptatibus voluptatem assumenda odit earum. Ducimus consequuntur dolores id architecto possimus! Porro deserunt sit dicta recusandae atque corrupti.
+    </p>
+</body>
+</html>

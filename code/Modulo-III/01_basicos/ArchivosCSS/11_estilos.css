@@ -1,0 +1,14 @@
+
+html {
+    /* REM */
+    font-size: 16px; 
+}
+
+body {
+    /* EM */
+    font-size: 24px;
+}
+
+table, td{
+    border: 1px solid black;
+}
