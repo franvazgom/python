@@ -1,0 +1,45 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+}
+
+.column { /* 4 imagenes por fila */
+    flex: 25%;
+    padding: 4px;
+    margin-top: 10px;
+}
+
+img {
+    margin-top: 15px;            
+}
+.column img {
+    vertical-align: middle;
+}
+
+/* 1024 px o menos 3 imagenes por fila*/
+@media (max-width: 1024px) {
+    .column { 
+        flex: 33%;
+    }
+}
+
+/* 800 px o menos 2 imagenes por fila */
+@media (max-width: 800px) {
+    .column { 
+        flex: 50%;
+    }
+}
+
+/* 600 px o menos 1 imagen por fila */
+@media (max-width: 600px) {
+    .column { 
+        flex: 100%;
+    }
+        
+}

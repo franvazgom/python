@@ -1,0 +1,50 @@
+<!-- 
+    Para el botón con id="btnRFC" en el evento click, crear una función que obtenga
+    el RFC de los datos proporcionados en los campos que se muestran, 
+    Recuerde que el RFC se conforma de la siguiente manera:
+        -Las primeras 2 letras del apellido paterno
+        -La primera letra del apellido materno
+        -La primera letra del primer nombre
+        -los 2 digitos del año de nacimiento
+        -los 2 digitos del mes
+        -los dos digitos del día
+    Por ejemplo, con la siguiente información: 
+        * Nombre                = Fernanda
+        * Apellido paterno      = Guitierrez
+        * Apellido materno      = Rubio
+        * Fecha de nacimiento   = 14/07/1995
+    El RFC = GURF950714 
+
+    Dicho RFC deberá aparecer en el campo con id="txtRFC"
+
+    En caso de que alguno de los campos se encuentre vacío, deberá enviar una alerta
+    indicando que los campos son obligatorios. 
+
+    var s1 = "Hola Mexico";
+    var s2 = s1.substring(1, 3);
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Por favor llene los datos que se solicitan:</h2>
+    <input type="text" id="txtNom" placeholder="Nombre(s)" />
+    <br /><br />
+    <input type="text" id="txtApeP" placeholder="Apellido Paterno" />
+    <br /><br />
+    <input type="text" id="txtApeM" placeholder="Apellido Materno" />
+    <br /><br />
+    <label for="txtFNac">Fecha de Nacimiento</label>
+    <input type="text" id="txtFNac" placeholder="dd/mm/aaaa" />
+    <br /><br />
+    <button id="btnRFC">Obten el RFC</button>
+    <br /><br />
+    <label for="txtRFC">RFC: </label>
+    <input type="text" id="txtRFC" disabled />
+</body>
+</html>

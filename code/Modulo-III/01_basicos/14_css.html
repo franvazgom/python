@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicas de FlexBox</title>
+    <style type='text/css'>
+        @import url("./ArchivosCSS/14_estilos.css")
+    </style>
+</head>
+<body>
+    <h1>Flex simple</h1>
+    <div class="box">
+        <div>Texto 1</div>
+        <div>Texto 2</div>
+        <div>Texto 3</div>
+        <div>Texto 4</div>
+        <div>Texto 5</div>
+    </div>
+    <h1>Flex order</h1>
+    <div class="box">
+        <div style='order: 3;'>Texto 1</div>
+        <div style='order: 2;'>Texto 2</div>
+        <div style='order: 1;'>Texto 3</div>
+        <div style='order: 5;'>Texto 4</div>
+        <div style='order: 4;'>Texto 5</div>
+    </div>
+    <h1>Flex grow</h1>
+    <div class="box">
+        <div>Texto 1</div>
+        <div style='flex-grow:1'>Texto 2</div>
+        <div>Texto 3</div>
+        <div style='flex-grow:2'>Texto 4</div>
+        <div>Texto 5</div>
+    </div>
+    <h1>Flex-basis</h1>
+    <div class="box1">
+        <div>1</div>
+        <div style='flex-grow:1'>2</div>
+        <div>3</div>
+        <div style='flex-basis:200px'>4</div>
+        <div>5</div>
+    </div>
+
+    <h1>Align self</h1>
+    <div class="box2">
+        <div>1</div>
+        <div style='align-self: flex-start;'>2 texto extra que no cabe</div>
+        <div style='align-self: flex-end;'>3</div>
+        <div>4</div>
+    </div>
+    <br><br><br><br><br>
+</body>
+</html>
