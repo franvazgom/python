@@ -1,0 +1,60 @@
+body {  
+  color: #fff;
+}
+
+.menu {
+  background-color: rgb(0,0,0);
+}
+
+.navbar {
+  border-bottom: #008ed6 4px solid;
+  opacity: 0.9;
+}
+
+#home-section {
+  background: url(../img/code-bg.png);
+  background-repeat: no-repeat;
+  background-size:cover; 
+  background-attachment: fixed;
+  min-height: 630px;
+}
+
+#home-section .dark-overlay {      
+  min-height: 630px;
+  background: rgba(0,0,0,0.5);
+}
+
+#home-section .home-inner {
+  padding-top: 150px;
+}
+
+.margen_top {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: black;
+  text-align: justify;
+}
+
+#home-section .card-form {
+  opacity: 0.8;
+}
+
+#home-section .fas .fal,
+#create-section .fas .fal{
+  color: #008ed6;
+  background: #fff;
+  padding: 3px;
+  border-radius: 7px;
+}
+
+#explore-section .fal .fab,
+#share-section .fal .fab {
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.project {
+  padding-top: 40px;
+}
