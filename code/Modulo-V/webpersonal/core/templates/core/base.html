@@ -21,6 +21,7 @@
 
   {% load static %}
   <link rel="stylesheet" href=" {% static 'core/css/style.css' %} " />
+  <link rel="icon" type='image/jpg' href="{% static 'core/img/courses.jpg' %}">
   <title>Inicio | Francisco Vázquez</title>
 </head>
 
@@ -45,7 +46,7 @@
               <i class="far fa-file-chart-line"></i> Proyectos</a>
           </li>          
           <li class="navbar-nav">
-            <a class="nav-link" href="contact.html">
+            <a class="nav-link" href=" {% url 'contact' %}  ">
               <i class="fal fa-at"></i> Contacto</a>
           </li>
         </ul>
