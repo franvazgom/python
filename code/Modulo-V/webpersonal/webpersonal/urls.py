@@ -19,11 +19,13 @@ from django.urls import path
 from core import views
 from django.conf.urls.static import static
 from . import settings
+from project import views as views_project
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('contact/', views.contact, name='contact')
+    path('contact/', views.contact, name='contact'),
+    path('project/', views_project.project, name='project'),
 ]
 
 if settings.DEBUG:

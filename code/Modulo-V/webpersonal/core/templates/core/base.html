@@ -38,15 +38,15 @@
       <div class="collapse navbar-collapse justify-content-end" id="navBarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href=" {% url 'home' %} ">
+            <a class="nav-link {% if request.path == '/' %} active {% endif %} " href=" {% url 'home' %} ">
               <i class="far fa-user-secret"></i> Inicio</a>
           </li>
           <li class="navbar-nav">            
-            <a class="nav-link" href="portfolio.html">
+            <a class="nav-link {% if request.path == '/project/' %} active {% endif %}" href=" {% url 'project' %} ">
               <i class="far fa-file-chart-line"></i> Proyectos</a>
           </li>          
           <li class="navbar-nav">
-            <a class="nav-link" href=" {% url 'contact' %}  ">
+            <a class="nav-link {% if request.path == '/contact/' %} active {% endif %}" href=" {% url 'contact' %}  ">
               <i class="fal fa-at"></i> Contacto</a>
           </li>
         </ul>
