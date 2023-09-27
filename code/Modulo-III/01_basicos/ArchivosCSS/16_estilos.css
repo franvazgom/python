@@ -1,0 +1,18 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.div1 {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+}
+
+
+.div2 {
+    width: 300px;
+    height: 100px;
+    border: 1px solid red;
+    padding: 30px;
+}

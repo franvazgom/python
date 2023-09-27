@@ -1,0 +1,22 @@
+
+p {
+    color:blue;
+    font-size: 1em;
+}
+
+#par2 {
+    color:red;
+    background-color: aqua;
+}
+
+.naranja {
+    color:orange;
+    border: 1px solid blue;
+}
+
+div > p, h1 {
+    background-color: green;
+    color:red;
+    text-decoration: underline;
+    text-align: center;
+}

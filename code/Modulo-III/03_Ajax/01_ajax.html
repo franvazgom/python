@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax 01</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    
+
+    <script>
+        let j1 = '{"nombre":"Juan", "edad":30, "pais":"México"}';
+        let j2 = '{"nombre":"Pedro", "edad":15, "pais":"Uruguay"}';
+        let objectoJson = $.parseJSON(j1);
+        console.log(objectoJson.nombre);
+        console.log(objectoJson.edad);
+        console.log(objectoJson.pais);
+        
+        console.log("////////////////////////////");
+    
+        let arreglo = '["hola", "www", "Mexico"]';
+        let objectoJson2 = $.parseJSON(arreglo);
+        console.log(objectoJson2[0]);
+        console.log(objectoJson2[1]);
+
+        console.log("////////////////////////////");
+        let arreglo2 = '[' + j1 + ',' + j2 + ']';
+        let objectoJson3 = $.parseJSON(arreglo2);
+        console.log(objectoJson3[0].nombre);
+        console.log(objectoJson3[1].edad);
+
+        console.log("////////////////////////////");
+        let cadena1 = '"arregloPersonas":' + arreglo2;
+        let cadena2 = '"arregloStrings":' + arreglo;
+        let cadena3 = '"mensaje":"Hola amigos!!!"'; 
+        let cadena4 = '{'+ cadena3 + ',' + cadena1 + ',' + cadena2   + '}'
+        let objJSON = $.parseJSON(cadena4);
+        console.log(objJSON.mensaje);
+        console.log(objJSON.arregloPersonas[1].nombre);
+        console.log(objJSON.arregloStrings[2]);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+.container {
+    display: flex;
+}
+
+.item {
+    color:blue;
+    font-size: 2em;
+    padding-left: 2em;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Multilinea */
+    background-color: dodgerblue;
+}
+
+.container2 > div {
+    background-color: #F1F1F1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 50px;
+}
+
+
+.container3 {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: dodgerblue;
+}
+
+.container3 > div {
+    background-color: #F1F1F1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 50px;
+}
+
+.container4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Multilinea */
+    background-color: dodgerblue;
+    justify-content: space-between;
+}
+
+.container4 > div {
+    background-color: #F1F1F1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 50px;
+}

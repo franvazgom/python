@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Contenido Principal -->
+<div class="margen_top">
+<h1 class="text-center">  
+    <i class="fal fa-lightbulb-on"></i>    
+    Nuestros Proyectos 
+    <i class="far fa-hands-usd"></i>
+</h1>
+{% for project in projects %}        
+    <!-- Proyecto -->
+    <div class="row project">
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid mb-3 rounded-circle" src="{{ project.image.url }}" alt="" />
+        </div>
+        <div class="col-lg-7 col-md-8">
+            <br>
+            <h2 class="section-heading title">
+                {{ project.title }}
+            </h2>
+            <p>
+                {{ project.description }}
+            </p>
+            {% if project.link %}
+                <p>
+                    <a href=" {{project.link}} " target='_blank'>Más información</a>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

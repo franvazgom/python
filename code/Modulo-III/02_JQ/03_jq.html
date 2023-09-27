@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+    </style>    
+</head>
+<body>
+    <h1>Practicas2 JQuery</h1>
+    <label for="campo">Buscar:</label>
+    <input id='campo' type="text">
+    
+    <br><br><br>
+    
+    <table id='tablaNombres'>
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Ap Paterno</td>
+                <td>Ap Materno</td>
+                <td>Edad</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table> <br>
+    <button id='agregaPersona'>Agrega persona</button>
+    <script src="./util.js"></script>
+    <script>
+        //Documento creado 
+        $(function() {
+            $('#agregaPersona').click(function(){
+                agregaRenglon(5);
+            });
+            
+            //$('#btnBuscar').click(function(){
+            //    recorreTabla();
+            //});
+
+            $('#campo').keyup(function(){
+                recorreTabla();
+            });
+
+        });
+
+        function recorreTabla() {
+            // Se obtiene el contenido del campo 
+            let textoBuscado = $('#campo').val().toUpperCase();
+            // Se recorre el contenido del tbody de la tabla
+            $('#tablaNombres tbody tr').each(function(){
+                renglon = $(this).text().toUpperCase();
+                if (renglon.indexOf(textoBuscado) < 0) {
+                    //Ocultar el renglon
+                    $(this).hide();
+                }else {
+                    $(this).show();
+                }
+            });
+        }
+
+        function agregaRenglon(numPersonas) {
+            let usuario = obtenerUsuario();
+            let plantilla = "<tr><td>nombre</td><td>apPaterno</td><td>apMaterno</td><td>edad</td></tr>";
+            let renglon = plantilla.replace('nombre', usuario.nombre);
+            renglon = renglon.replace('apPaterno', usuario.apPaterno);
+            renglon = renglon.replace('apMaterno', usuario.apMaterno);
+            renglon = renglon.replace('edad', usuario.edad);
+            $('#tablaNombres').find('tbody').append(renglon);
+            
+            $("#tablaNombres").find("tbody").find("tr").dblclick(function(){
+                $(this).remove();
+            });
+
+            $("#tablaNombres").find("tbody").find("tr").mouseover(function() {
+                $(this).css('background', 'yellow');
+            });
+
+            $("#tablaNombres").find("tbody").find("tr").mouseleave(function() {
+                $(this).css('background', 'white');
+            });
+
+            $("#tablaNombres tr:odd").css('background', '#c1c1c1');
+        }
+
+    </script>
+</body>
+</html>

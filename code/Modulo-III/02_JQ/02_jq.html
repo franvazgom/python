@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        .color_rojo {
+            color:red;
+            background-color:aqua;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practicas JQuery</h1>
+    <p class="color_rojo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam possimus, itaque perspiciatis odit quaerat dolores a in illo ducimus animi. Dicta voluptatibus eveniet voluptatem dolor rerum, accusamus id totam nostrum!
+    </p>
+    <br>
+    <button id="btn1">Oculta parrafo</button>
+    <br>
+    <button id="btn2">Aparece parrafo</button>
+    
+    <script>
+        //Documento creado
+        $(function(){
+            $('#btn1').click(oculta);
+            
+            $('#btn2').click(function(){
+                $(".color_rojo").show(2000);
+            });
+        });
+        function oculta() {
+            $(".color_rojo").hide(1000);
+        }
+    </script>
+</body>
+</html>

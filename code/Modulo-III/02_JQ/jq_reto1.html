@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ Reto 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        .color_azul {
+            color:blue;
+        }
+        .color_verde {
+            color:green;
+        }
+        table, td {
+            border: 1px solid black;
+        }
+        thead {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reto 1 de JQuery</h1>
+    <p id='p1'>Parrafo p1</p>
+    <p class="color_azul">Parrafo 2</p>
+    <p class="color_azul">Parrafo 3</p>
+    <p class="color_azul">Parrafo 4</p>
+    <h2 class="color_azul">Tabla - Ejemplo. </h2>
+    <table id='tabla'>
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Ap Paterno</td>
+                <td>Edad</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Natalia</td>
+                <td>Vazquez</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Juliana</td>
+                <td>Gomez</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Marina</td>
+                <td>Salcedo</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Juan</td>
+                <td>German</td>
+                <td>60</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id='addRecord'>Agrega Registro</button>
+
+    <h2 class="color_verde">Lista desordenada</h2>
+    <ul>
+        <li>México</li>
+        <li> <span style="color:red;">Puebla</span></li>
+        <li>Yucatán</li>
+        <li>Jalisco</li>
+        <li>Baja California</li>
+    </ul>
+
+    <form action="">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name='nombre' id='nombre' required/>
+        <br><br>
+        <label for="apPaterno">Apellido paterno:</label>
+        <input type="text" name='apPaterno' id='apPaterno' />
+        <br><br>
+        <input type="password" name='password' id='password' placeholder='Contraseña'>
+        <br><br>
+        <label for="email">Correo:</label>
+        <input type="email" name='email' id='email' required />
+        <br><br>
+        <label for="sexo">Sexo:</label>
+        <input type="radio" name='sexo' id='sexo' value="H" /> Hombre
+        <input type="radio" name='sexo' id='sexo' value="M" /> Mujer
+        <br><br>
+        <input type="button" value='Boton de pruebas' />
+        <br><br>
+        <input type="submit" value='Enviar formulario' />
+    </form> 
+
+    <script>
+        /* 
+        Desde la consola: 
+        1.- Cambia el color del texto del parrafo 1 a rojo
+        2.- Cambia el tamaño a 1.5 em de todos los parrafos
+        3.- Cambia a color rojo el ultimo parrafo del DOM
+        4.- Cambia el texto por "xxxxxx" del segundo parrafo cuya clase sea azul 
+        5.- Muestra en la consola el contenido del segundo renglon de la columna 1 de la tabla del DOM
+        6.- Cambia el contenido del segundo renglon de la columna 1 por "pruebas"
+        7.- Cambia el contenido del tercer elemento de la lista a Zacatecas 
+        */
+
+        $(function(){            
+            $('#tabla').find("tbody").find("tr").dblclick(function(){
+                // Funcionalidad
+                let nombre = $(this).find("td:first").text();
+                let apPaterno = $(this).find("td:eq(1)").text();
+
+                $('#nombre').val(nombre);
+                $('#apPaterno').val(apPaterno);
+            });
+
+            $('#addRecord').click(function(){
+                //Funcionalidad
+                let registro = "<tr><td>Pedro</td><td>Pérez</td><td>15</td></tr>";
+                $('#tabla tr:last').after(registro); 
+            });
+
+        });
+    </script>
+</body>
+</html>

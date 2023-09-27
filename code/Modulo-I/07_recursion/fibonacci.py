@@ -17,7 +17,9 @@ fibonacci(7) = 13 (empezando desde la posición 0)
 '''
 
 def fibonacci(n):
-    pass
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
 
 def main():
     print("Programa que calcula número 'n' de la serie de fibonacci")

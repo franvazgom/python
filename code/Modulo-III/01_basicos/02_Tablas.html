@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Tablas</title>
+    <style>
+        table, td{
+            border:1px solid black;
+        }
+        thead { color: green;}
+        tbody { color: blue;}
+        tfoot { color: red;}
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de tablas</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Producto</td>
+            <td>Existencia</td>
+            <td>Precio</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Uva</td>
+            <td>150 Kg</td>
+            <td>$100.99</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Platano</td>
+            <td>1,260 Kg</td>
+            <td>$25.45</td>
+        </tr>
+    </table>
+
+    <br><br>
+    <table style='width:75%;'>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Producto</td>
+                <td>Existencia</td>
+            <td>Precio</td>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Uva</td>
+                <td>150 Kg</td>
+                <td>$100.99</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Platano</td>
+                <td>1,260 Kg</td>
+                <td>$25.45</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>-</td>
+                <td>Total:</td>
+                <td>1,410 Kg</td>
+                <td>-</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
