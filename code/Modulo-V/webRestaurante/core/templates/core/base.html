@@ -57,8 +57,8 @@
           <li class="nav-item px-lg-4 {% if request.path == '/contact/' %} active {% endif %}">
             <a class="nav-link text-uppercase text-expanded" href=" {% url 'core:contact' %} ">Contacto</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="blog.html">Blog</a>
+          <li class="nav-item px-lg-4 {% if request.path|slice:':6' == '/blog/' %} active {% endif %}">
+            <a class="nav-link text-uppercase text-expanded" href=" {% url 'blog:post_list' %} ">Blog</a>
           </li>
         </ul>
       </div>

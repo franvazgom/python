@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+
+<section class="page-section cta">
+    <div class="container">
+        {% comment %} 
+            Regresa la list de todos los posts que pertenecen a esa categoría
+        {% endcomment %}
+        {% for post in category.get_posts.all %}
+            {% include "blog/blog.html" %}
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock  %}
