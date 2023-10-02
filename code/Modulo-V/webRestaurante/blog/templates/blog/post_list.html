@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+
+<section class="page-section cta">
+    <div class="container">
+        {% for post in posts %}
+            {% include "blog/blog.html" %}
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock  %}
