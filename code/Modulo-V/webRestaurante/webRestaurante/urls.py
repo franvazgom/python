@@ -21,12 +21,14 @@ from . import settings
 from core.urls import core_urlpatterns
 from blog.urls import blog_urlpatterns
 from pages.urls import pages_urlpatterns
+from contact.urls import contact_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(core_urlpatterns)),
     path('blog/', include(blog_urlpatterns)),
     path('pages/', include(pages_urlpatterns)),
+    path('contact/', include(contact_urlpatterns)),
 ]
 
 if settings.DEBUG:
