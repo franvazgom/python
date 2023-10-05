@@ -16,35 +16,12 @@
             <!-- Formulario de contacto -->
             <form action='' method='post'>
               {% csrf_token %}
-              <div class="form-group">
-                  <label>Nombre *</label>
-                  <div class="input-group">
-                    <input name='name' type="text" class="form-control">
-                  </div>
-              </div>
-              <div class="form-group">
-                <label>Email *</label>
-                <div class="input-group">
-                  <input required='true', name='email' type="email" class="form-control">
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Mensaje *</label>
-                <div class="input-group">
-                  <textarea name='content' class="form-control"></textarea>
-                </div>
-              </div>
+              {{form.as_p}}
               <div class="text-center">
                 <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar">
               </div>
             </form>
             <!-- Fin formulario de contacto -->
-            {% if errors %}
-              <div class="errores">
-                <p>Existen errores en el formulario</p>
-                {{errors}}
-              </div>
-            {% endif %}
 
           </div>
         </div>
