@@ -1,7 +1,35 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from .forms import ContactForm, ContactForm2
-from django.urls import reverse_lazy
+from django.shortcuts               import render
+from django.http                    import HttpResponseRedirect
+from .forms                         import ContactForm, ContactForm2
+from django.urls                    import reverse_lazy
+from django.http                    import JsonResponse
+from django.views.decorators.http   import require_http_methods, require_POST
+from django.middleware.csrf         import get_token
+from pages.models                   import Page
+from django.core.serializers import serialize
+import pdb
+
+@require_POST
+def get_cities(request):
+    token = get_token(request)
+    print(token)
+    selected_country = request.POST.get('country', '')
+    if selected_country == 'México':
+        cities = ['Ciudad de México', 'Puebla', 'Veracruz', 'Guadalajara', 'Monterrey']
+    elif selected_country == 'USA':
+        cities = ['Nueva York','Los Ángeles','Chicago']
+    elif selected_country == 'Canada':
+        cities = ['Vancouver','Mentreal','Quebec']
+    else:
+        cities = []
+    return JsonResponse({'cities':cities})
+
+@require_http_methods(['GET'])
+def get_countries(request):
+
+    # countries = ['México', 'USA', 'Canada']
+    countries = serialize('json', Page.objects.all())
+    return JsonResponse({'countries':countries})
 
 def contact(request):
     if request.method == 'POST':
@@ -33,3 +61,4 @@ def contact(request):
 
 def thanks(request):
     return render(request, 'contact/thanks.html')
+

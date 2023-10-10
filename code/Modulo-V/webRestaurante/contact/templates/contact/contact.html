@@ -6,6 +6,11 @@
   <div class="container">
     <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src=" {% static 'core/img/contact.jpg' %} " alt="">
     <div class="about-heading-content">
+      {% comment %} Select que contiene los paises {% endcomment %}
+      <a href="#" onclick='get_contries();' class='btn btn-primary'>Obten países</a>
+      <select name="country" id="country" class='text-primary' ></select>
+      <select name="city" id="city" class='text-primary' ></select>
+      <br>
       <div class="row">
         <div class="col-xl-9 col-lg-10 mx-auto">
           <div class="bg-faded rounded p-5">
@@ -52,5 +57,56 @@
     </div>
   </div>
 </section>
+{% endblock  %}
 
+{% block contentJS %}
+<script src='https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js'></script>
+<script>
+
+  function csrfSafeMethod(method) {
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+
+  // Cuanbdo el documento se encuentra carado
+  $(function(){
+    $('#country').change(function(){
+      var selectedCountry = $(this).val();
+      $.ajax({
+        url: '/contact/get_cities/',
+        type: 'POST',
+        dataType: 'json',
+        data: {'country':selectedCountry},
+        beforeSend: function(xhr, settings) {
+          if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", Cookies.get('csrftoken'));
+          }
+        }, 
+        success: function(data) {
+          var citiesSelect = $('#city');
+          citiesSelect.empty();
+          $.each(data.cities, function(index, city){
+            citiesSelect.append($('<option>').text(city).val(index));
+          });
+        }  
+      });
+    });
+  });
+
+
+  function get_contries() {
+    var selectCountry = $('#country');
+    selectCountry.empty();
+    $.ajax({
+      url: '/contact/get_countries/',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        var obj_json = jQuery.parseJSON(data.countries);
+        $.each(obj_json, function(index, country){
+          selectCountry.append($('<option>').text(country.fields.title).val(country.fields.title));
+        });
+      }
+    });
+  }
+</script>
 {% endblock  %}
