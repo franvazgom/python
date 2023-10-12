@@ -33,6 +33,10 @@ urlpatterns = [
     path('services/', include(services_urlpatterns)), 
     #Ckeditor path
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    
+    # add this new url entry to include the social auth's urls
+    re_path(r'^oauth/', include('social_django.urls', namespace='social')),
+
 ]
 
 if settings.DEBUG:
