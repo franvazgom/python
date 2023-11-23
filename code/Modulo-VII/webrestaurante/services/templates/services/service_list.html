@@ -1,0 +1,33 @@
+{% extends "core/base.html" %}
+{% block content %}
+{% load static %}
+{% include 'services/menu_services.html' %}
+{% for service in services %}
+  <section class="page-section">
+    <div class="container">
+      <div class="product-item">
+        <div class="product-item-title d-flex">
+          <div class="bg-faded p-5 d-flex mr-auto rounded">
+            <h2 class="section-heading mb-0">
+              <span class="section-heading-upper">{{service.title}}</span>
+              <span class="section-heading-lower">{{service.sub_title}}</span>
+            </h2>
+          </div>
+        </div>
+        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" 
+            src="{{service.image.url}}" alt="">
+        <div class="product-item-description d-flex ml-auto">
+          <div class="bg-faded p-5 rounded">
+            {{service.content|safe}}
+            <br>
+            {% if request.user.is_staff %}
+              <a href="{%  url 'services:update' service.id %}">Ver detalle</a>
+            {% endif %}
+            <a class='btn btn-primary' onclick='addCart({{service.id}})'>Agregar al carrito</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}
+{% endblock %}

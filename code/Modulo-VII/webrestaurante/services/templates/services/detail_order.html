@@ -1,0 +1,42 @@
+{% extends "core/base.html" %}
+{% block content %}
+{% load static %}
+ 
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-md-9 mx-auto mb-1">
+            <table class='table table-bordered'>
+                <thead class='text-white'>
+                    <tr>
+                        <th>Id</th>
+                        <th>Títutlo</th>
+                        <th>Sub título</th>
+                        <th>Cantidad</th>
+                        <th style='text-align: right'>Costo unitario</th>
+                        <th style='text-align: right'>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody class='text-white'>
+                    <tr>
+                        <td>1</td>
+                        <td>Producto 1</td>
+                        <td>Subtitulo 1</td>
+                        <td>4</td>
+                        <td style='text-align: right'>$350.00</td>
+                        <td style='text-align: right'>$1,400.00</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Producto 3</td>
+                        <td>Subtitulo 3</td>
+                        <td>2</td>
+                        <td style='text-align: right'>$  100.00</td>
+                        <td style='text-align: right'>$  200.00</td>
+                    </tr>
+                </tbody>
+            </table>        
+        </div>
+    </div>
+</div>
+
+{% endblock %}
