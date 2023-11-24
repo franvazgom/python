@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 {% block content %}
 {% load static %}
- 
+{% load humanize %}
 <div class="container">
     <div class="row mt-2">
         <div class="col-md-9 mx-auto mb-1">
@@ -17,24 +17,37 @@
                     </tr>
                 </thead>
                 <tbody class='text-white'>
-                    <tr>
-                        <td>1</td>
-                        <td>Producto 1</td>
-                        <td>Subtitulo 1</td>
-                        <td>4</td>
-                        <td style='text-align: right'>$350.00</td>
-                        <td style='text-align: right'>$1,400.00</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Producto 3</td>
-                        <td>Subtitulo 3</td>
-                        <td>2</td>
-                        <td style='text-align: right'>$  100.00</td>
-                        <td style='text-align: right'>$  200.00</td>
-                    </tr>
+                    {% for product in order  %}
+                        <tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.title}}</td>
+                            <td>{{product.sub_title}}</td>
+                            <td>{{product.quantity}}</td>
+                            <td style='text-align: right'>${{product.cost|floatformat:2|intcomma}}</td>
+                            <td style='text-align: right'>${{product.sub_total|floatformat:2|intcomma}}</td>
+                        </tr>                    
+                    {% endfor %}
                 </tbody>
             </table>        
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-9 mx-auto mb-2">
+            <div style='text-align:right;'>
+                <span class='text-white'>
+                    Total = ${{total|floatformat:2|intcomma}}
+                </span>    
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-9 mx-auto mb-2">
+            <div id='button_submit' style='text-align:right;'>
+                <a href="{% url 'services:create_order' %}" class='btn text-white form-btn mx-1' >
+                    <span class='spinner-border spinner-border-sm d-none'></span>
+                    <i class='fas fa-paper-plane fa-fw'></i>Confirmar pedido
+                </a>
+            </div>
         </div>
     </div>
 </div>

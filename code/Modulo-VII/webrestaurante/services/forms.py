@@ -1,7 +1,28 @@
 from django import forms
-from django.forms import ModelForm, TextInput, Textarea
-from services.models import Service
+from django.forms import ModelForm, TextInput, Textarea, EmailInput
+from services.models import Service, Order
 
+class OrderForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        total = self.request.session.get('total')
+        
+        initial = kwargs.get('initial', {})
+        initial['total'] = total
+
+        super().__init__(*args, **kwargs)
+    class Meta:
+        model = Order
+        fields = ['email','name','address','neighborhood', 'total']
+
+        widgets= {
+            'email':EmailInput(attrs={'class':'form-control', 'placeholder':'Email'}),
+            'name':TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
+            'address':TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
+            'neighborhood':TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
+            'total':TextInput(attrs={'class':'form-control', 'readonly':'readonly'}),
+        }
+        
 
 class ServiceForm(ModelForm):
     class Meta:
