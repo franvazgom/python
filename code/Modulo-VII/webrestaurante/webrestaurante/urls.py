@@ -1,8 +1,7 @@
-"""
-URL configuration for webRestaurante project.
+"""webrestaurante URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,29 +15,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from django.conf.urls.static import static
+
 from . import settings
+from core import views
 from core.urls import core_urlpatterns
-from blog.urls import blog_urlpatterns
+from blog.urls import post_urlpatterns
 from pages.urls import pages_urlpatterns
+from services.urls import services_urlspatterns
 from contact.urls import contact_urlpatterns
-from services.urls import services_urlpatterns
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(core_urlpatterns)),
-    path('blog/', include(blog_urlpatterns)),
+    path('', include(core_urlpatterns)),    
+    path('blog/', include(post_urlpatterns)),
     path('pages/', include(pages_urlpatterns)),
+    path('services/', include(services_urlspatterns)),
     path('contact/', include(contact_urlpatterns)),
-    path('services/', include(services_urlpatterns)), 
     #Ckeditor path
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    
-    # add this new url entry to include the social auth's urls
-    re_path(r'^oauth/', include('social_django.urls', namespace='social')),
-
 ]
 
 if settings.DEBUG:
+    from django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, 
-                          document_root=settings.MEDIA_ROOT)
+            document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% block content %}
+
+<div class="container mb-4">
+    <form id='formOrder' action="" class='px-0 py-2 pb-5' method='post'>
+        {% csrf_token %}
+        <table class="text-white">
+            {{form.as_table}}
+        </table>
+        <div class="row mt-1">
+            <div class="col-md-9 mx-auto mb-2">
+                <div id='button_submit' style='text-align:right;'>
+                    <button type='submit' class='btn text-info form-btn mx-1' style='width:170px;'>
+                        <span class="spinner-border spinner-border-sm d-none"></span>
+                        <i class="fas fa-paper-plane fa-fw"></i> Continuar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

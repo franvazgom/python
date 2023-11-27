@@ -1,0 +1,19 @@
+{% if request.user.is_staff %}
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-4 border border-dark" id="SecondNav">
+    <div class="container">
+        <span class="navbar-brand" href="#"><i>Servicios</i></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nep"
+                aria-controls="services_menu" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nep">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" 
+                        href=" {% url 'services:create' %} "><i>Crear Nuevo Servicio</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endif %}
