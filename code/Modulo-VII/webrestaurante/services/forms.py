@@ -5,8 +5,8 @@ from services.models import Service, Order
 class OrderForm(ModelForm):
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
-        total = self.request.session.get('total')
-        
+        # total = self.request.session.get('total')
+        total = 200
         initial = kwargs.get('initial', {})
         initial['total'] = total
 
@@ -18,8 +18,8 @@ class OrderForm(ModelForm):
         widgets= {
             'email':EmailInput(attrs={'class':'form-control', 'placeholder':'Email'}),
             'name':TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
-            'address':TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
-            'neighborhood':TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
+            'address':TextInput(attrs={'class':'form-control', 'placeholder':'Dirección'}),
+            'neighborhood':TextInput(attrs={'class':'form-control', 'placeholder':'Colonia'}),
             'total':TextInput(attrs={'class':'form-control', 'readonly':'readonly'}),
         }
         

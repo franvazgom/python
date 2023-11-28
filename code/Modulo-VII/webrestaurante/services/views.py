@@ -5,18 +5,21 @@ from .forms import ServiceForm
 from django.contrib.admin.views.decorators import staff_member_required
 import json
 from django.views.generic.edit import CreateView
+from django.views.generic import TemplateView
 from .forms import OrderForm
 from django.urls import reverse_lazy
+
+
+class OrderSuccessView(TemplateView):
+    template_name = 'services/order_success.html'
 
 class CreateOrder(CreateView):
     form_class = OrderForm
     template_name = 'services/order_client.html'
-    #Falta completar... 
-    success_url = reverse_lazy('core:home')
+    success_url = reverse_lazy('services:order_success')
 
     def form_valid(self, form):
         order = form.save()
-        # order.save()
         return super().form_valid(form)
 
     def get_form_kwargs(self):
