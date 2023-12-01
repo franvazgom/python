@@ -5,7 +5,7 @@ from .forms import ServiceForm
 from django.contrib.admin.views.decorators import staff_member_required
 import json
 from django.views.generic.edit import CreateView
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView 
 from .forms import OrderForm
 from django.urls import reverse_lazy
 
@@ -80,3 +80,7 @@ def create(request):
 def service_list(request):
     services = Service.objects.all()
     return render(request, 'services/service_list.html', {'services':services})
+
+class ServiceListView(ListView):
+    model = Service
+    paginate_by = 2

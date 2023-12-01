@@ -17,3 +17,13 @@ class TestServiceModel(TestCase):
     
     def test_service_cost(self): 
         self.assertEquals(self.services[0].cost, 500)
+
+    def test_label_name(self):
+        service = self.services[0]
+        field_label = service._meta.get_field('title').verbose_name
+        self.assertEquals(field_label, 'Título')
+    
+    def test_max_length(self):
+        service = self.services[0]
+        max_length = service._meta.get_field('title').max_length
+        self.assertEquals(max_length, 200)
