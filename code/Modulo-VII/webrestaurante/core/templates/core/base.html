@@ -71,7 +71,22 @@
             <a class="nav-link text-uppercase text-expanded" href="#" onclick='showOrder();'>
               <i class="fas fa-shopping-cart"><span id='cart-badge' class="badge badge-danger">0</span> </i>
             </a>
-          </li> 
+          </li>
+          {% if not request.user.is_authenticated %} 
+            <li class='nav-item'>
+              <a class="nav-link" href="{% url 'login' %}" >Acceder</a>
+            </li>
+            <li class='nav-item'>
+              <a class="nav-link" href="{% url 'signup' %}" >Registro</a>
+            </li>
+          {% else %}
+            <li class='nav-item'>
+              <span class="nav-link">{{ user.username }}</span>
+            </li>
+            <li class='nav-item'>
+              <a class="nav-link" href="{% url 'logout' %}" >Salir</a>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </div>

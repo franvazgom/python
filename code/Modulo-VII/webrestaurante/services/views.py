@@ -8,7 +8,9 @@ from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView, ListView 
 from .forms import OrderForm
 from django.urls import reverse_lazy
-
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import permission_required
 
 class OrderSuccessView(TemplateView):
     template_name = 'services/order_success.html'
@@ -81,6 +83,7 @@ def service_list(request):
     services = Service.objects.all()
     return render(request, 'services/service_list.html', {'services':services})
 
+@method_decorator(permission_required('services.can_edit_service', login_url='/accounts/login/'), name='dispatch')
 class ServiceListView(ListView):
     model = Service
     paginate_by = 2

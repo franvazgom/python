@@ -26,6 +26,8 @@ from contact.urls import contact_urlpatterns
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('registration.urls')),
     path('admin/', admin.site.urls),
     path('', include(core_urlpatterns)),    
     path('blog/', include(post_urlpatterns)),

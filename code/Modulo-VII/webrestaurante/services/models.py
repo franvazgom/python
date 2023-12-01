@@ -32,6 +32,9 @@ class Service(models.Model):
         verbose_name = 'Servicio'
         verbose_name_plural = 'Servicios'
         ordering = ['created']
+        permissions = [
+            ('can_edit_service','Puede hacer todo lo del servicio'),
+        ]
     
     def __str__(self):
         return self.title
