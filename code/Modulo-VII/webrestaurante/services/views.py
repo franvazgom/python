@@ -83,7 +83,7 @@ def service_list(request):
     services = Service.objects.all()
     return render(request, 'services/service_list.html', {'services':services})
 
-# @method_decorator(permission_required('services.can_edit_service', login_url='/accounts/login/'), name='dispatch')
+@method_decorator(permission_required('services.can_edit_service', login_url='/accounts/login/'), name='dispatch')
 class ServiceListView(ListView):
     model = Service
     paginate_by = 2
