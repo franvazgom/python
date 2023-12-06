@@ -5,18 +5,23 @@ from .forms import ServiceForm
 from django.contrib.admin.views.decorators import staff_member_required
 import json
 from django.views.generic.edit import CreateView
+from django.views.generic import TemplateView, ListView 
 from .forms import OrderForm
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import permission_required
+
+class OrderSuccessView(TemplateView):
+    template_name = 'services/order_success.html'
 
 class CreateOrder(CreateView):
     form_class = OrderForm
     template_name = 'services/order_client.html'
-    #Falta completar... 
-    success_url = reverse_lazy('core:home')
+    success_url = reverse_lazy('services:order_success')
 
     def form_valid(self, form):
         order = form.save()
-        # order.save()
         return super().form_valid(form)
 
     def get_form_kwargs(self):
@@ -77,3 +82,8 @@ def create(request):
 def service_list(request):
     services = Service.objects.all()
     return render(request, 'services/service_list.html', {'services':services})
+
+# @method_decorator(permission_required('services.can_edit_service', login_url='/accounts/login/'), name='dispatch')
+class ServiceListView(ListView):
+    model = Service
+    paginate_by = 2

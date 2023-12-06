@@ -23,7 +23,7 @@ class Service(models.Model):
     title = models.CharField(max_length=200, verbose_name='Título')    
     sub_title = models.CharField(max_length=200, verbose_name='Subtítulo')
     content = RichTextUploadingField(verbose_name='Contenido')
-    cost = models.FloatField(verbose_name='Costo unitario', default=100)
+    cost = models.FloatField(verbose_name='Costo unitario', default=500)
     image = models.ImageField(upload_to='services', verbose_name='Imágen') 
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificación')
@@ -31,7 +31,10 @@ class Service(models.Model):
     class Meta:
         verbose_name = 'Servicio'
         verbose_name_plural = 'Servicios'
-        ordering = ['-updated']
+        ordering = ['created']
+        permissions = [
+            ('can_edit_service','Puede hacer todo lo del servicio'),
+        ]
     
     def __str__(self):
         return self.title
