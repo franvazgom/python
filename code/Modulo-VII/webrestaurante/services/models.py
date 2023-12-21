@@ -17,13 +17,14 @@ class Order(models.Model):
         ordering = ['-created']
     
     def __str__(self):
-        return self.email
+        return self.emails
 
 class Service(models.Model):
     title = models.CharField(max_length=200, verbose_name='Título')    
     sub_title = models.CharField(max_length=200, verbose_name='Subtítulo')
     content = RichTextUploadingField(verbose_name='Contenido')
-    cost = models.FloatField(verbose_name='Costo unitario', default=100)
+    cost = models.FloatField(verbose_name='Costo unitario', default=150)
+    quantity = models.IntegerField(verbose_name='Cantidad', default=5)
     image = models.ImageField(upload_to='services', verbose_name='Imágen') 
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificación')
