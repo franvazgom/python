@@ -59,6 +59,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 ROOT_URLCONF = 'webrestaurante.urls'
 
 TEMPLATES = [
