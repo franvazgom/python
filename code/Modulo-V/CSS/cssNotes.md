@@ -121,10 +121,22 @@ p[draggable="false"]{
 https://colorhunt.co/palettes/popular
 
 # Font properties
+## font-size
 1px = 1/96 inch = 0.26mm 
 1pt = 1/72 inch = 0.35mm 
 1em = 100% of parent
 1rem = 100% of root
+
+## font-weight 
+font-weight: bold / normal
+Relative to Parent: lighter / bolder
+number:   100 - 900
+
+## font-family
+font-family: 'Especific', generic;
+font-family: 'Caveat', cursive; 
+
+
 
 
 
