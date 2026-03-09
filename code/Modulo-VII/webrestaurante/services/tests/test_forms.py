@@ -1,8 +1,13 @@
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
+from django.contrib.sessions.middleware import SessionMiddleware
 from services.forms import OrderForm
-
+from django.http import HttpRequest
 
 class TestOrderForm(TestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+        
+
     def test_labels(self):
         of = OrderForm()
         self.assertTrue(of.fields['name'].label == 'Nombre')
@@ -11,6 +16,9 @@ class TestOrderForm(TestCase):
         form_data = {'email':'ddddd',
                      'name':'aaaaaaaaa',
                      'address':'lllllllllll'}
+        self.client.session['total'] = 200
+        self.client.session.save()
+        
         of = OrderForm(form_data)
         self.assertFalse(of.is_valid())
 

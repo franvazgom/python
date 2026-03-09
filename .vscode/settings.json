@@ -1,3 +1,4 @@
 {
-    "editor.inlineSuggest.showToolbar": "onHover"
+    "editor.inlineSuggest.showToolbar": "onHover",
+    "livePreview.defaultPreviewPath": "/code/Modulo-V/CSS/code/5.1. Adding CSS/external.html"
 }

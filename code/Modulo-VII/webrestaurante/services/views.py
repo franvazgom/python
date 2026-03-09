@@ -21,6 +21,13 @@ class CreateOrder(CreateView):
     success_url = reverse_lazy('services:order_success')
 
     def form_valid(self, form):
+        order = self.request.session['order']
+        for pro in order: 
+            id = pro['id']
+            qty = pro['quantity']
+            s = Service.objects.get(pk=id)
+            s.quantity = s.quantity - qty
+            s.save()
         order = form.save()
         return super().form_valid(form)
 
