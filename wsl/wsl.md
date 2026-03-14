@@ -13,3 +13,4 @@
 |wsl.exe -d Ubuntu-24.04 | Ejecuta una versión particular |
 |wsl --set-default Ubuntu-24.04| Coloca la versión como default | 
 
+33cSLpbzI657LIEzPQkCWGdyb3FYjr9Ccx5mC73ZghSGTkrF9IaK
