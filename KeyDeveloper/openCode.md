@@ -4,6 +4,7 @@ curl -fsSL https://opencode.ai/install | bash
 
 Ejecuta este comando en tu terminal de WSL. Esto obliga a Linux a leer de nuevo el archivo .bashrc y reconocer el nuevo comando:
 source ~/.bashrc
+33cSLpbzI657LIEzPQkCWGdyb3FYjr9Ccx5mC73ZghSGTkrF9IaK
 "gsk _ 33"
 echo 'export GROQ_API_KEY="XXX"' >> ~/.bashrc
 source ~/.bashrc
