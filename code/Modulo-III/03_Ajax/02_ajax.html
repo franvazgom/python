@@ -30,20 +30,20 @@
         </tbody>
     </table>
     <script>
-
+        var datos = null; 
         $(function(){
             $('#btnAjax').click(function() {
                 obtienePremiosNobel();
             });
         });
-
+        var datos = null; 
         function obtienePremiosNobel() {
             $.ajax({
                 url:'https://api.nobelprize.org/2.1/laureates',
                 type:'GET',
                 dataType:'json',
-                success: function(data) {
-                    //console.log(data.laureates[0].birth.date);
+                success: function(data) {                    
+                    datos = data; 
                     $.each(data.laureates, function(index, elemento){
                         console.log(index, elemento.fullName.en);
                     });
